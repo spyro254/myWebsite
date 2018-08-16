@@ -1,0 +1,87 @@
+
+@import url('https://fonts.googleapis.com/css?family=Assistant|Prompt|Source+Sans+Pro:700');
+
+:root {
+    /*    font-size: 20px;*/
+    box-sizing: border-box;
+    --c-base: white;
+    --c-base-b: whitesmoke;
+    --c-black: black;
+    --c-shadow-light: dimgray;
+    --c-shadow-dark: darkslategray;
+    --c-alert: crimson;
+    --c-alert-b: firebrick;
+    --c-alert-c: darkred;
+    --c-accent: royalblue;
+    --c-accent-b: steelblue;
+    --c-accent-c: midnightblue;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Prompt', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.border--main {
+    border: 0.1rem solid blue;
+}
+
+.card {
+    height: 100px;
+    margin: 0.4rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    cursor: pointer;
+    box-shadow: 0 0.1rem 0.2rem var(--c-shadow-light);
+}
+
+.btn:hover {
+    box-shadow: 0 0.1rem 0.2rem var(--c-shadow-light), 0 0.1rem 0.2rem var(--c-shadow-dark);
+}
+
+.btn-fixed-width {
+    padding: 0;
+    width: 6rem;
+    min-height: 2rem;
+}
+
+.btn-alert {
+    background: var(--c-alert);
+    border: 0.2rem solid var(--c-alert-c);
+    color: var(--c-base-b);
+}
+
+.btn-alert:hover {
+    color: var(--c-base);
+    border: 0.2rem solid var(--c-alert-b);
+}
+
+.btn-one {
+    background: var(--c-accent);
+    border: 0.2rem solid var(--c-accent-c);
+    color: var(--c-black);
+}
+
+.btn-one:hover {
+/*    color: var(--c-black);*/
+    border: 0.2rem solid var(--c-accent-b);
+}
+
+.testbox {
+    height: 200px;
+    width: 160px;
+    background-color: cornflowerblue;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+}
