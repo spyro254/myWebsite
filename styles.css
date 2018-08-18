@@ -92,6 +92,7 @@ body {
     height: 4rem;
     top: 3rem;
     left: 7rem;
+    background-color: aquamarine;
 /*    background-color: teal;*/
 }
 
@@ -134,10 +135,42 @@ body {
 .burger-top, .burger-mid, .burger-bot {
     background-color: red;
     height: 0.5rem;
+    position: relative;
     width: 100%;
+    cursor: pointer;
 }
 
-burger--open
+.burger-top::after, .burger-top::before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    height: 0.5rem;
+    width: 100%;
+    background-color: green;
+}
+
+.burger-top::before {
+    top: 2rem;
+}
+
+.burger--open {
+    transform: rotate(-45deg);
+    transition: transform 150ms linear;
+}
+
+.burger--open::before {
+    transform: translate(-2rem);
+    transition: transform 100ms ease-in-out 50ms;
+}
+
+.burger--open::after {
+    transform: translate(-1rem);
+    transition: transform 100ms ease-in-out 50ms;
+}
+
+@keyframes group {
+    100%
+}
 
 .burger-mid {
 /*    width: 80%;*/
