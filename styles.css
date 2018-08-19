@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Assistant|Prompt|Source+Sans+Pro:700');
 
 :root {
-    /*    font-size: 20px;*/
+/*        font-size: 11px;*/
     box-sizing: border-box;
     --c-base: white;
     --c-base-b: whitesmoke;
@@ -133,7 +133,7 @@ body {
 }
 
 .burger-top, .burger-mid, .burger-bot {
-    background-color: red;
+    background-color: green;;
     height: 0.5rem;
     position: relative;
     width: 100%;
@@ -154,7 +154,7 @@ body {
 }
 
 .burger--open {
-    transform: rotate(-45deg);
+    transform: rotate(-30deg);
     transition: transform 150ms linear;
 }
 
@@ -164,12 +164,19 @@ body {
 }
 
 .burger--open::after {
-    transform: translate(-1rem);
+    transform: translate(-1rem) scale(2);
     transition: transform 100ms ease-in-out 50ms;
+}
+
+.burger--open, .burger--open::after, .burger--open::before {
 }
 
 @keyframes group {
     100%
+}
+
+.burger-item {
+    width:
 }
 
 .burger-mid {
@@ -191,4 +198,79 @@ body {
     transition: inherit;
 /*    border: 1px solid green;*/
 /*    align-content: stretch;*/
+}
+
+.burger-container {
+    cursor: pointer;
+    width: 6rem;
+    height: 5rem;
+    margin: 4rem;
+    background-color: green;
+}
+
+.burger-line {
+    top: 2rem;
+    height: 1rem;
+    width: 100%;
+    background-color: slateblue;
+    position: relative;
+    transition: scale 200ms ease-in-out 200ms;
+    transition: transform 400ms ease-in-out;
+    pointer-events: none; /*prevents mouse events of .burger-line inteferring with .burger-container - fixed flickering*/
+    z-index: 30;
+}
+
+.burger-line::before, .burger-line::after, .burger-item::before, .burger-item::after {
+    position: absolute;
+    content: '';
+    background-color: slateblue;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+}
+
+.burger-line::before, .burger-item::before {
+    top: -2rem;
+}
+
+.burger-line::after, .burger-item::after {
+    top: 2rem;
+}
+
+.burger-line--open {
+    transform: rotate(-30deg) scale(1.25);
+    transition: transform 150ms linear;
+}
+
+.burger-line--open::before, .burger-line--open::after {
+    transition: transform 100ms ease-in-out 50ms;
+    transition:: top 180ms linear 20ms;
+}
+
+.burger-line--open::before, .burger-item::before {
+    transform: translate(-1.5rem) scale(0.4) scaleY(1.25);
+    top: -1rem;
+}
+
+.burger-line--open::after, .burger-item::after {
+    transform: translate(1.5rem) scale(0.4) scaleY(1.25);
+    top: 1rem;
+}
+
+.burger-item {
+    width: 100%;
+    background-color: red;
+    height: 1rem;
+    transform: rotate(-30deg) scale(1.25);
+    transition: all 120ms linear 30ms;
+    top: 1rem;
+    position: relative;
+    text-transform: uppercase;
+    line-height: 1rem;
+    opacity: 0;
+}
+
+.burger-item--show {
+    opacity: 1;
+    transform: translate(0, 5rem) rotate(-30deg) scale(1.25);
 }
