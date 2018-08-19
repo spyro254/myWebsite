@@ -1,31 +1,28 @@
-
-
-const XnavOnHover = function() {
-    let burger = document.getElementById('test-burger');
-    console.log(burger.querySelector(".div"));
-    for (ele of burger.childNodes) {
-        if (ele.tagName === "DIV") {
-            ele.classList.add("burger--open")
-        }
-    }
-}
-
 const burgerOpen = function(burgerId) {
     let burger = document.getElementById(burgerId);
     burger.classList.add('burger-line--open');
-    moveBurgerItem('burgerContainer');
+    burgerItemOpen('burgerContainer');
 }
 
 const burgerClose = function(burgerId) {
     let burger = document.getElementById(burgerId);
-    burger.classList.remove('burger-line--open')
+    burger.classList.remove('burger-line--open');
+    burgerItemClose('burgerContainer');
 }
 
-const moveBurgerItem = function(burgerId) {
+const burgerItemOpen = function(burgerId) {
     let burger = document.getElementById(burgerId);
     let burgerItemArray = Array.from(burger.getElementsByClassName('burger-item'))
     for (each of burgerItemArray) {
         each.classList.add('burger-item--show');
+    }
+}
+
+const burgerItemClose = function(burgerId) {
+    let burger = document.getElementById(burgerId);
+    let burgerItemArray = Array.from(burger.getElementsByClassName('burger-item'))
+    for (each of burgerItemArray) {
+        each.classList.remove('burger-item--show');
     }
 }
 
